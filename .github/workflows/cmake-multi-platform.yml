@@ -13,13 +13,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: 'v2.2'
-      - name: Test pwd
-        run: pwd
-      - name: Test ls
-        run: ls
-#      - name: install dependencies
-#        run: sudo apt install ninja-build libsdl2-dev libsdl2-mixer-dev build-essential unzip nasm libpng-dev libgme-dev libopenmpt-#dev libcurl4-openssl-dev pkg-config libvpx-dev libyuv-dev
-#      - name: Configure
-#        run: cmake --preset ninja-release
-#      - name: Build
-#        run: cmake --build --preset ninja-release
+      - name: install dependencies
+        run: sudo apt install ninja-build libsdl2-dev libsdl2-mixer-dev build-essential unzip nasm libpng-dev libgme-dev libopenmpt-#dev libcurl4-openssl-dev pkg-config libvpx-dev libyuv-dev
+      - name: Configure
+        run: cmake --preset ninja-release
+      - name: Build
+        run: cmake --build --preset ninja-release
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: /home/runner/work/RingRacers/RingRacers/build/ninja-release/bin/ringracers_v2.2
