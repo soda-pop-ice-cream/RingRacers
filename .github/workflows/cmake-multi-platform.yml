@@ -9,5 +9,17 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - run: sudo apt install ninja-build
-    - run: ninja --version
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: 'v2.2'
+      - name: Test pwd
+        run: pwd
+      - name: Test ls
+        run: ls
+#      - name: install dependencies
+#        run: sudo apt install ninja-build libsdl2-dev libsdl2-mixer-dev build-essential unzip nasm libpng-dev libgme-dev libopenmpt-#dev libcurl4-openssl-dev pkg-config libvpx-dev libyuv-dev
+#      - name: Configure
+#        run: cmake --preset ninja-release
+#      - name: Build
+#        run: cmake --build --preset ninja-release
