@@ -21,6 +21,5 @@ jobs:
         run: cmake --build --preset ninja-release
       - name: Publish release
         uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: /home/runner/work/RingRacers/RingRacers/build/ninja-release/bin/ringracers_v2.2
