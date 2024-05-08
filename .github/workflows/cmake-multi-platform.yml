@@ -23,3 +23,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: /home/runner/work/RingRacers/RingRacers/build/ninja-release/bin/ringracers_v2.2
+          tag_name: v2.2
+          name: v2.2
