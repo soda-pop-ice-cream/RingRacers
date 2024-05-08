@@ -14,7 +14,7 @@ jobs:
         with:
           ref: 'v2.2'
       - name: install dependencies
-        run: sudo apt install ninja-build libsdl2-dev libsdl2-mixer-dev build-essential unzip nasm libpng-dev libgme-dev libopenmpt-#dev libcurl4-openssl-dev pkg-config libvpx-dev libyuv-dev
+        run: sudo apt install ninja-build libsdl2-dev libsdl2-mixer-dev build-essential unzip nasm libpng-dev libgme-dev libopenmpt-dev libcurl4-openssl-dev pkg-config libvpx-dev libyuv-dev
       - name: Configure
         run: cmake --preset ninja-release
       - name: Build
